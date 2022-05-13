@@ -1,0 +1,48 @@
+<div class="container flex-row">
+    <div class="container-fluid flex-col m-r">        
+        <form #addtodo="ngForm" (ngSubmit)="handleSubmit(addtodo.value)" class="form">
+            <input type="text" ngModel name="title" placeholder="Enter Title..."/>
+            <input type="text" ngModel name="description" placeholder="Enter  Description..."/>
+            <input type="date" ngModel name="completiontime" placeholder=" Enter Date.."/>
+            <div class="form-group">
+                <input type="submit" value="Submit"/>
+            </div>
+        </form>
+
+        <div class="grid">
+            <div class="" *ngFor="let item of done">
+                <div class="card">
+                    <div class="card-details">
+                        <h4>{{item.title}}</h4>
+                        <h6>{{item.description}}</h6>
+                        <p>{{item.completiontime}}</p>
+                    </div>
+                    <div class="btn-group">
+                        <button (click)="HandleEdit(item._id)" class=" btn btn-edite">Edit</button>
+                        <button (click)="HandleDelete(item._id)" class=" btn btn-del">Delete</button>
+                    </div>
+              </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+   <div class=" td-c">
+    <div class="grid">
+        <div class="  " *ngFor="let item of todos">
+            <div class="card">
+                <div class="card-details">
+                    <h4>{{item.title}}</h4>
+                    <h6>{{item.description}}</h6>
+                    <p>{{item.completiontime}}</p>
+                </div>
+                <div class="btn-group">
+                        <button (click)="HandleEdit(item._id)" class=" btn btn-edite">Edit</button>
+                        <button (click)="HandleDelete(item._id)" class=" btn btn-del">Delete</button>
+                </div>
+          </div>
+        </div>
+    </div>
+   </div>
+
+</div>
+
